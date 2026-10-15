@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مركز العمليات الأمنية | SOC</title>
+  <meta name="description" content="موقع تعريفي عن مركز العمليات الأمنية (SOC): مهامه، فريقه، أدواته، ودورة الاستجابة للحوادث.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== الهيدر ===== -->
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a href="#top" class="logo">
+        <span class="logo-icon">◈</span> SOC
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">ما هو SOC؟</a></li>
+        <li><a href="#tasks">المهام</a></li>
+        <li><a href="#team">الفريق</a></li>
+        <li><a href="#tools">الأدوات</a></li>
+        <li><a href="#ir">الاستجابة للحوادث</a></li>
+        <li><a href="#quiz">اختبر نفسك</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== القسم الرئيسي ===== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="tag">// Security Operations Center</p>
+        <h1>مركز العمليات الأمنية<br><span class="accent">العين الساهرة على الأمن السيبراني</span></h1>
+        <p class="lead">
+          فريق متخصص يراقب أنظمة المنظمة وشبكاتها على مدار الساعة، يكتشف التهديدات
+          ويحللها ويستجيب لها قبل أن تتحول إلى أضرار حقيقية.
+        </p>
+        <div class="hero-actions">
+          <a href="#about" class="btn btn-primary">ابدأ التعرّف</a>
+          <a href="#quiz" class="btn btn-ghost">اختبر معلوماتك</a>
+        </div>
+      </div>
+
+      <!-- لوحة تنبيهات حيّة (محاكاة) -->
+      <div class="console" aria-label="محاكاة لوحة التنبيهات">
+        <div class="console-head">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="console-title">SIEM — Live Alerts (محاكاة)</span>
+        </div>
+        <ul class="console-body" id="alertFeed"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== أرقام سريعة ===== -->
+  <section class="stats container">
+    <div class="stat"><bdi dir="ltr"><span class="num" data-target="24">24</span><span class="unit">/7</span></bdi><p>مراقبة مستمرة</p></div>
+    <div class="stat"><span class="num" data-target="3">3</span><span class="unit">مستويات</span><p>لتصعيد التنبيهات</p></div>
+    <div class="stat"><span class="num" data-target="4">4</span><span class="unit">مراحل</span><p>للاستجابة للحوادث (NIST)</p></div>
+    <div class="stat"><span class="num" data-target="5">5</span><span class="unit">أدوات</span><p>أساسية في أي SOC</p></div>
+  </section>
+
+  <!-- ===== ما هو SOC ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title"><span>01</span> ما هو مركز العمليات الأمنية؟</h2>
+      <div class="two-col">
+        <div>
+          <p>
+            <strong>مركز العمليات الأمنية (Security Operations Center - SOC)</strong> هو وحدة مركزية
+            داخل المنظمة — أو خدمة خارجية — تضم أشخاصًا وعمليات وتقنيات تعمل معًا لحماية الأصول الرقمية.
+          </p>
+          <p>
+            يجمع الـ SOC السجلات (Logs) من الخوادم والشبكات والأجهزة والتطبيقات، ثم يحللها لاكتشاف أي
+            نشاط مشبوه، ويتعامل معه وفق إجراءات واضحة.
+          </p>
+          <p>هدفه الأساسي: <span class="highlight">تقليل الوقت بين حدوث الهجوم واكتشافه والاستجابة له.</span></p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-icon">👥</div>
+            <h3>الأشخاص</h3>
+            <p>محللون ومهندسون وصائدو تهديدات بخبرات متنوعة.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">📋</div>
+            <h3>العمليات</h3>
+            <p>إجراءات وسيناريوهات استجابة (Playbooks) موحّدة.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🖥️</div>
+            <h3>التقنية</h3>
+            <p>أدوات للمراقبة والتحليل والأتمتة.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== المهام ===== -->
+  <section class="section alt" id="tasks">
+    <div class="container">
+      <h2 class="section-title"><span>02</span> المهام الرئيسية</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">📡</div>
+          <h3>المراقبة المستمرة</h3>
+          <p>متابعة الشبكات والأنظمة على مدار الساعة لرصد أي سلوك غير طبيعي.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🔍</div>
+          <h3>اكتشاف التهديدات</h3>
+          <p>بناء قواعد كشف (Detection Rules) وتحليل التنبيهات للتمييز بين الحقيقي والإنذار الكاذب.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🚨</div>
+          <h3>الاستجابة للحوادث</h3>
+          <p>احتواء الهجوم، إزالة أثره، واستعادة الأنظمة بأسرع وقت.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🎯</div>
+          <h3>صيد التهديدات</h3>
+          <p>البحث الاستباقي عن مهاجمين متخفّين لم تكتشفهم الأدوات تلقائيًا.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🧠</div>
+          <h3>استخبارات التهديدات</h3>
+          <p>جمع المعلومات عن المهاجمين وأساليبهم ومؤشرات الاختراق (IOCs).</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>إدارة الثغرات</h3>
+          <p>رصد الثغرات في الأنظمة ومتابعة إصلاحها حسب خطورتها.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الفريق ===== -->
+  <section class="section" id="team">
+    <div class="container">
+      <h2 class="section-title"><span>03</span> فريق الـ SOC ومستوياته</h2>
+      <p class="section-intro">يُنظَّم الفريق عادةً في مستويات (Tiers)، وكل تنبيه يُصعَّد للمستوى الأعلى عند الحاجة. اضغط على أي مستوى لمعرفة التفاصيل.</p>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" role="tab" data-tab="t1">المستوى 1</button>
+        <button class="tab" role="tab" data-tab="t2">المستوى 2</button>
+        <button class="tab" role="tab" data-tab="t3">المستوى 3</button>
+        <button class="tab" role="tab" data-tab="mgr">القيادة</button>
+      </div>
+
+      <div class="tab-panel active" id="t1">
+        <h3>محلل الفرز (Tier 1 — Triage Analyst)</h3>
+        <p>خط الدفاع الأول. يستقبل التنبيهات من الأدوات، يتحقق منها، ويقرر إن كانت حقيقية أم إنذارًا كاذبًا.</p>
+        <ul class="checklist">
+          <li>مراقبة لوحات التنبيهات</li>
+          <li>الفرز الأولي وتحديد الأولوية</li>
+          <li>فتح تذكرة وتصعيد الحالات الجدية</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="t2">
+        <h3>مستجيب الحوادث (Tier 2 — Incident Responder)</h3>
+        <p>يتعمق في الحالات المصعّدة ليفهم نطاق الهجوم ومصدره، ويبدأ إجراءات الاحتواء.</p>
+        <ul class="checklist">
+          <li>التحقيق المعمّق وتحليل السجلات</li>
+          <li>تحديد الأنظمة المتأثرة</li>
+          <li>تنفيذ خطوات الاحتواء والمعالجة</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="t3">
+        <h3>صائد التهديدات / الخبير (Tier 3 — Threat Hunter)</h3>
+        <p>أعلى مستوى خبرة تقنية. يتعامل مع الهجمات المعقدة ويبحث استباقيًا عن التهديدات.</p>
+        <ul class="checklist">
+          <li>صيد التهديدات الاستباقي</li>
+          <li>تحليل البرمجيات الخبيثة والأدلة الرقمية</li>
+          <li>تطوير قواعد الكشف وتحسينها</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="mgr">
+        <h3>مدير الـ SOC وقادة الفرق</h3>
+        <p>يشرف على الفريق والعمليات، ويضمن جودة العمل والتواصل مع الإدارة العليا.</p>
+        <ul class="checklist">
+          <li>إدارة الفريق والمناوبات</li>
+          <li>متابعة مؤشرات الأداء (KPIs)</li>
+          <li>رفع التقارير واتخاذ القرارات في الحوادث الكبيرة</li>
+        </ul>
+      </div>
+
+      <!-- مسار التصعيد -->
+      <div class="escalation">
+        <div class="esc-step">تنبيه</div>
+        <div class="esc-arrow">←</div>
+        <div class="esc-step">Tier 1</div>
+        <div class="esc-arrow">←</div>
+        <div class="esc-step">Tier 2</div>
+        <div class="esc-arrow">←</div>
+        <div class="esc-step">Tier 3</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الأدوات ===== -->
+  <section class="section alt" id="tools">
+    <div class="container">
+      <h2 class="section-title"><span>04</span> أدوات الـ SOC</h2>
+      <p class="section-intro">اضغط على أي بطاقة لقلبها ومعرفة وظيفة الأداة.</p>
+      <div class="flip-grid">
+        <div class="flip" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="mono">SIEM</span><small>Security Information & Event Management</small></div>
+            <div class="flip-back">يجمع السجلات من كل الأنظمة في مكان واحد، يربط الأحداث ببعضها، ويطلق التنبيهات. <em>أمثلة: Splunk، Microsoft Sentinel، Wazuh</em></div>
+          </div>
+        </div>
+        <div class="flip" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="mono">SOAR</span><small>Security Orchestration, Automation & Response</small></div>
+            <div class="flip-back">يؤتمت المهام المتكررة وينفّذ سيناريوهات الاستجابة تلقائيًا لتوفير وقت المحللين.</div>
+          </div>
+        </div>
+        <div class="flip" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="mono">EDR</span><small>Endpoint Detection & Response</small></div>
+            <div class="flip-back">يراقب الأجهزة الطرفية (حواسيب وخوادم)، يكتشف السلوك الخبيث ويعزل الجهاز المصاب.</div>
+          </div>
+        </div>
+        <div class="flip" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="mono">IDS / IPS</span><small>Intrusion Detection / Prevention System</small></div>
+            <div class="flip-back">يراقب حركة الشبكة: الـ IDS يكتشف ويُنبّه، والـ IPS يمنع الحركة الخبيثة مباشرة.</div>
+          </div>
+        </div>
+        <div class="flip" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="mono">TIP</span><small>Threat Intelligence Platform</small></div>
+            <div class="flip-back">يجمع معلومات التهديدات ومؤشرات الاختراق من مصادر مختلفة ويغذّي بها باقي الأدوات.</div>
+          </div>
+        </div>
+        <div class="flip" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="mono">Firewall</span><small>جدار الحماية</small></div>
+            <div class="flip-back">يتحكم بالحركة الداخلة والخارجة من الشبكة وفق قواعد محددة، وسجلاته مصدر مهم للـ SIEM.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الاستجابة للحوادث ===== -->
+  <section class="section" id="ir">
+    <div class="container">
+      <h2 class="section-title"><span>05</span> دورة الاستجابة للحوادث</h2>
+      <p class="section-intro">حسب إطار <strong>NIST SP 800-61</strong>، تمر الاستجابة للحوادث بأربع مراحل مترابطة:</p>
+      <ol class="timeline">
+        <li>
+          <div class="tl-num">1</div>
+          <div class="tl-body">
+            <h3>الاستعداد <small>Preparation</small></h3>
+            <p>تجهيز الفريق والأدوات وكتابة الخطط والسيناريوهات قبل وقوع أي حادثة.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-num">2</div>
+          <div class="tl-body">
+            <h3>الاكتشاف والتحليل <small>Detection & Analysis</small></h3>
+            <p>رصد المؤشرات، التأكد من وقوع الحادثة، وتحديد نطاقها وخطورتها.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-num">3</div>
+          <div class="tl-body">
+            <h3>الاحتواء والإزالة والتعافي <small>Containment, Eradication & Recovery</small></h3>
+            <p>عزل الأنظمة المصابة، إزالة سبب الهجوم، ثم إعادة الأنظمة للعمل بأمان.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-num">4</div>
+          <div class="tl-body">
+            <h3>ما بعد الحادثة <small>Post-Incident Activity</small></h3>
+            <p>توثيق الدروس المستفادة وتحسين الإجراءات لمنع تكرار الحادثة.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="sub-title">مؤشرات قياس الأداء</h3>
+      <div class="metrics">
+        <div class="metric"><span class="mono">MTTD</span><p>متوسط الوقت لاكتشاف التهديد<br><small>Mean Time To Detect</small></p></div>
+        <div class="metric"><span class="mono">MTTR</span><p>متوسط الوقت للاستجابة/المعالجة<br><small>Mean Time To Respond</small></p></div>
+        <div class="metric"><span class="mono">FP Rate</span><p>نسبة الإنذارات الكاذبة<br><small>False Positive Rate</small></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== أنواع الـ SOC ===== -->
+  <section class="section alt" id="types">
+    <div class="container">
+      <h2 class="section-title"><span>06</span> أنواع مراكز العمليات الأمنية</h2>
+      <div class="cards">
+        <article class="card"><h3>داخلي (In-house)</h3><p>تبنيه المنظمة وتديره بفريقها الخاص. تحكم كامل لكن تكلفة عالية.</p></article>
+        <article class="card"><h3>مُدار (Managed / MSSP)</h3><p>تُسند المراقبة لشركة متخصصة. مناسب للمنظمات الصغيرة والمتوسطة.</p></article>
+        <article class="card"><h3>هجين (Hybrid)</h3><p>مزيج بين فريق داخلي ومزوّد خارجي لتغطية ساعات أو مهام معينة.</p></article>
+        <article class="card"><h3>افتراضي (Virtual)</h3><p>فريق يعمل عن بُعد بدون مقر مخصص، معتمدًا على الأدوات السحابية.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الأسئلة الشائعة ===== -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <h2 class="section-title"><span>07</span> أسئلة شائعة</h2>
+      <div class="accordion">
+        <details>
+          <summary>ما الفرق بين الـ SOC والـ NOC؟</summary>
+          <p>الـ NOC (مركز عمليات الشبكة) يهتم بأداء الشبكة وتوفرها، بينما الـ SOC يهتم بأمانها وحمايتها من الهجمات.</p>
+        </details>
+        <details>
+          <summary>ما هو الإنذار الكاذب (False Positive)؟</summary>
+          <p>تنبيه تطلقه الأداة على نشاط يبدو مشبوهًا لكنه في الحقيقة سليم. تقليل هذه الإنذارات من أهم تحديات الـ SOC.</p>
+        </details>
+        <details>
+          <summary>كيف أبدأ مسيرتي في مجال الـ SOC؟</summary>
+          <p>ابدأ بأساسيات الشبكات وأنظمة التشغيل، ثم تعلّم تحليل السجلات واستخدام أداة SIEM مجانية مثل Wazuh أو Splunk (النسخة المجانية)، وتدرّب على منصات مثل TryHackMe و Blue Team Labs و LetsDefend.</p>
+        </details>
+        <details>
+          <summary>ما هو إطار MITRE ATT&CK؟</summary>
+          <p>قاعدة معرفية عالمية تصنّف أساليب المهاجمين وتقنياتهم، ويستخدمها الـ SOC لبناء قواعد الكشف وفهم مراحل الهجوم.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الاختبار ===== -->
+  <section class="section alt" id="quiz">
+    <div class="container narrow">
+      <h2 class="section-title"><span>08</span> اختبر نفسك</h2>
+      <div class="quiz-box" id="quizBox">
+        <div id="quizMain">
+        <div class="quiz-progress"><div class="quiz-bar" id="quizBar"></div></div>
+        <p class="quiz-count" id="quizCount"></p>
+        <h3 class="quiz-q" id="quizQ"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+        <p class="quiz-feedback" id="quizFeedback"></p>
+        <button class="btn btn-primary" id="quizNext" hidden>التالي</button>
+        </div>
+        <div class="quiz-result" id="quizResult" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الفوتر ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>موقع تعريفي عن مركز العمليات الأمنية (SOC)</p>
+      <p class="muted">إعداد: <strong>غدي الزهراني</strong> (Ghadi Alzahrani) — <strong>Hash Club</strong> · © <span id="year"></span></p>
+      <a href="#top" class="to-top" aria-label="العودة للأعلى">↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
