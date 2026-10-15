@@ -2,7 +2,7 @@
 
 An Arabic introductory website about **Security Operations Centers (SOC)**, built for **Hash Club**.
 
-🔗 **Live site:** https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/
+🔗 **Live site:** https://ghaditalal.github.io/soc-site/
 
 ---
 
